@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Salvage</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #050510;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Segoe UI", system-ui, sans-serif;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #wrap {
+    position: relative;
+    line-height: 0;
+  }
+  canvas {
+    display: block;
+    width: min(96vw, 960px);
+    height: auto;
+    max-height: 96vh;
+    background: #050510;
+    border: 1px solid #12324a;
+    border-radius: 6px;
+    box-shadow: 0 0 60px rgba(55, 246, 255, 0.12), 0 0 120px rgba(255, 46, 136, 0.08);
+    cursor: crosshair;
+  }
+  #hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -24px;
+    text-align: center;
+    color: #5f7fa3;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="960" height="640"></canvas>
+    <div id="hint">WASD move &middot; mouse aim &middot; click / space shoot &middot; shift dash &middot; P pause &middot; R restart</div>
+  </div>
+  <script type="module">
+    import { boot } from './src/main.js';
+    boot();
+  </script>
+</body>
+</html>
